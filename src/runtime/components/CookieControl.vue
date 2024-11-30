@@ -70,7 +70,7 @@
               v-text="localeStrings?.close"
             />
             <template v-for="cookieType in CookieType" :key="cookieType">
-              <template v-if="moduleOptions.cookies[cookieType].length">
+              <template v-if="moduleOptions.cookies[cookieType]?.length">
                 <h2
                   v-text="
                     localeStrings &&
@@ -204,10 +204,8 @@
     </transition>
   </aside>
 </template>
-
 <script setup lang="ts">
 import { ref, computed, onBeforeMount, watch } from 'vue'
-
 import {
   type Cookie,
   CookieType,
@@ -223,14 +221,12 @@ import {
 import { COOKIE_ID_SEPARATOR } from '#cookie-control/constants'
 import setCssVariables from '#cookie-control/set-vars'
 import { useCookieControl, useCookie, useNuxtApp } from '#imports'
-
 export interface Props {
   locale?: Locale
 }
 const props = withDefaults(defineProps<Props>(), {
   locale: 'en',
 })
-
 const {
   cookiesEnabled,
   cookiesEnabledIds,
@@ -239,7 +235,6 @@ const {
   moduleOptions,
 } = useCookieControl()
 const nuxtApp = useNuxtApp()
-
 // data
 const expires = new Date(Date.now() + moduleOptions.cookieExpiryOffsetMs)
 const localCookiesEnabled = ref([...(cookiesEnabled.value || [])])
@@ -248,7 +243,6 @@ const cookieIsConsentGiven = useCookie(moduleOptions.cookieNameIsConsentGiven, {
   expires,
   ...moduleOptions.cookieOptions,
 })
-
 const cookieCookiesEnabledIds = useCookie(
   moduleOptions.cookieNameCookiesEnabledIds,
   {
@@ -256,7 +250,6 @@ const cookieCookiesEnabledIds = useCookie(
     ...moduleOptions.cookieOptions,
   },
 )
-
 // computations
 const isSaved = computed(
   () =>
@@ -266,7 +259,6 @@ const isSaved = computed(
     getCookieIds(localCookiesEnabled.value).sort().join(COOKIE_ID_SEPARATOR),
 )
 const localeStrings = computed(() => moduleOptions.localeTexts[props.locale])
-
 // methods
 const accept = () => {
   setCookies({
@@ -276,7 +268,6 @@ const accept = () => {
 }
 const acceptPartial = () => {
   const localCookiesEnabledIds = getCookieIds(localCookiesEnabled.value)
-
   setCookies({
     isConsentGiven: true,
     cookiesOptionalEnabled: [
@@ -302,9 +293,7 @@ const getDescription = (description: Translatable) =>
     moduleOptions.isDashInDescriptionEnabled === false ? '' : '-'
   } ${resolveTranslatable(description, props.locale)}`
 const getName = (name: Translatable) => {
-  return name === 'functional'
-    ? localeStrings.value?.cookiesFunctional
-    : resolveTranslatable(name, props.locale)
+  return resolveTranslatable(name, props.locale)
 }
 const init = () => {
   nuxtApp.$cookies.locale.value = props.locale
@@ -342,7 +331,6 @@ const toggleButton = ($event: MouseEvent) => {
 }
 const toogleCookie = (cookie: Cookie) => {
   const cookieIndex = getCookieIds(localCookiesEnabled.value).indexOf(cookie.id)
-
   if (cookieIndex < 0) {
     localCookiesEnabled.value.push(cookie)
   } else {
@@ -352,19 +340,15 @@ const toogleCookie = (cookie: Cookie) => {
 const toggleLabel = ($event: KeyboardEvent) => {
   if ($event.key === ' ') ($event.target as HTMLLabelElement | null)?.click()
 }
-
 // lifecycle
 onBeforeMount(() => {
   if (moduleOptions.colors) {
     const variables: Record<string, string> = {}
-
     for (const key in moduleOptions.colors) {
       variables[`cookie-control-${key}`] = `${moduleOptions.colors[key]}`
     }
-
     setCssVariables(variables)
   }
-
   if (moduleOptions.isModalForced && !isConsentGiven.value) {
     isModalActive.value = true
   }
@@ -373,39 +357,30 @@ watch(
   () => cookiesEnabled.value,
   (current, _previous) => {
     localCookiesEnabled.value = [...(current || [])]
-
     if (isConsentGiven.value) {
       cookieCookiesEnabledIds.value = getCookieIds(current || []).join(
         COOKIE_ID_SEPARATOR,
       )
-
       for (const cookieEnabled of current || []) {
         if (!cookieEnabled.src) continue
-
         const script = document.createElement('script')
         script.src = cookieEnabled.src
-
         const headElement = document.getElementsByTagName('head')[0]
         if (!headElement) return
-
         headElement.appendChild(script)
       }
     } else {
       cookieCookiesEnabledIds.value = undefined
     }
-
     // delete formerly enabled cookies that are now disabled
     const cookiesOptionalDisabled = moduleOptions.cookies.optional.filter(
       (cookieOptional) => !(current || []).includes(cookieOptional),
     )
-
     for (const cookieOptionalDisabled of cookiesOptionalDisabled) {
       if (!cookieOptionalDisabled.targetCookieIds) continue
-
       for (const cookieOptionalDisabledId of cookieOptionalDisabled.targetCookieIds) {
         removeCookie(cookieOptionalDisabledId)
       }
-
       if (cookieOptionalDisabled.src) {
         for (const script of [
           ...document.head.querySelectorAll(
@@ -419,7 +394,6 @@ watch(
   },
   { deep: true },
 )
-
 watch(isConsentGiven, (current, _previous) => {
   if (current === undefined) {
     cookieIsConsentGiven.value = undefined
@@ -427,17 +401,14 @@ watch(isConsentGiven, (current, _previous) => {
     cookieIsConsentGiven.value = current ? allCookieIdsString : '0'
   }
 })
-
 watch(
   () => props.locale,
   (locale) => {
     nuxtApp.$cookies.locale.value = locale
   },
 )
-
 // initialization
 init()
-
 defineExpose({
   accept,
   acceptPartial,
