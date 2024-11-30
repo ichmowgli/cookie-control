@@ -16,27 +16,41 @@ export default defineNuxtConfig({
   // module options
   cookieControl: {
     colors: {
-      checkboxActiveBackground: '#00A34A',
+      barBackground: '#017275',
+      barTitleColor: '#ddd',
+      checkboxActiveBackground: '#C6C6CD',
+      checkboxInactiveBackground: '#ede1e1',
+      checkboxActiveCircleBackground: '#05989B',
+      checkboxInactiveCircleBackground: '#f44336',
+      checkboxDisabledBackground: '#ddd',
+      checkboxDisabledCircleBackground: '#fff',
     },
     closeModalOnClickOutside: true,
     cookies: {
       necessary: [
         {
-          description: {
-            de: 'Funkcne desc',
-            en: 'Funkcne desc',
-          },
           id: 'ncc_f',
           name: {
-            de: 'Funkcne',
-            en: 'Funkcne',
+            sk: 'Funkčné',
+            en: 'Functional',
+          },
+          description: {
+            sk: 'Technické uloženie alebo prístup sú nevyhnutne potrebné na legitímny účel umožnenia použitia konkrétnej služby, ktorú si účastník alebo používateľ výslovne vyžiadal, alebo na jediný účel vykonania prenosu komunikácie cez elektronickú komunikačnú sieť.',
+            en: 'Technical storage or access is strictly necessary for the legitimate purpose of enabling the use of a specific service that the subscriber or user has expressly requested, or for the sole purpose of transmitting a communication over an electronic communications network.',
           },
         },
       ],
       optional: [
         {
           id: 'stat',
-          name: 'Stat Cookie',
+          name: {
+            sk: 'Štatistické',
+            en: 'Statistics',
+          },
+          description: {
+            sk: 'Technické úložisko alebo prístup, ktorý sa používa výlučne na štatistické účely.',
+            en: 'Technical repository or access used exclusively for statistical purposes.',
+          },
           links: {
             '/': 'Local Privacy Policy',
             'https://example.com': '3rd Party Privacy Policy',
@@ -46,7 +60,11 @@ export default defineNuxtConfig({
         },
         {
           id: 'marketing',
-          name: 'Marketing Cookie',
+          name: 'Marketingové',
+          description: {
+            sk: 'Technické úložisko alebo prístup, ktorý sa používa výlučne na marketingové účely.',
+            en: 'Technical repository or access used exclusively for marketing purposes.',
+          },
           links: {
             '/': 'Local Privacy Policy',
             'https://example.com': '3rd Party Privacy Policy',
@@ -58,11 +76,6 @@ export default defineNuxtConfig({
     },
     isCookieIdVisible: true,
     isIframeBlocked: true,
-    locales: ['en', 'de'],
-    localeTexts: {
-      de: {
-        iframeBlocked: 'Bitte funktionale Cookies aktivieren:',
-      },
-    },
+    locales: ['en', 'sk'],
   },
 })

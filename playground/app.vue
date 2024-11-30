@@ -18,8 +18,8 @@
         <input id="input-en" v-model="locale" type="radio" value="en" />
       </div>
       <div>
-        <label for="input-de">German</label>
-        <input id="input-de" v-model="locale" type="radio" value="de" />
+        <label for="input-sk">Slovak</label>
+        <input id="input-sk" v-model="locale" type="radio" value="sk" />
       </div>
     </fieldset>
   </div>

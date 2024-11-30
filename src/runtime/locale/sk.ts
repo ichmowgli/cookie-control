@@ -2,19 +2,20 @@ import type { LocaleStrings } from '#cookie-control/types'
 
 export default {
   accept: 'Prijať',
-  acceptAll: 'Prijať všetko',
+  acceptAll: 'Prijať všetky',
   bannerDescription:
-    'Súbory cookie a súbory cookie tretích strán používame na to, aby sme mohli všetko správne zobraziť a lepšie pochopiť, ako používate túto webovú lokalitu, aby sme mohli zlepšiť ponúkané služby. Rozhodnutia môžete kedykoľvek zmeniť pomocou tlačidla cookie, ktoré sa zobrazí po vykonaní výberu na tomto banneri.',
-  bannerTitle: 'Cookies',
-  close: 'Zatvoriť',
-  cookiesFunctional: 'Obslužné cookies',
-  cookiesNecessary: 'Nevyhnutné  cookies',
-  cookiesOptional: 'Voliteľné cookies',
+    'Používame cookies, aby sme Vám umožnili pohodlné prehliadanie webu a vďaka analýze návštevnosti, mohli neustále zlepšovať funkcie, výkon a použiteľnosť.',
+  bannerTitle: 'Na vašom súkromí nám záleží',
+  close: '',
+  cookiesFunctional: '',
+  cookiesNecessary: '',
+  cookiesOptional: '',
   decline: 'Odmietnuť',
   declineAll: 'Odmietnuť všetky',
-  here: 'tu',
-  iframeBlocked: 'Ak ho chcete zobraziť, povoľte obslužné cookies',
-  manageCookies: 'Ďalšie informácie a prispôsobenie',
-  save: 'Uložiť',
-  settingsUnsaved: 'Máte neuložené nastavenia',
+  here: 'kliknite tu',
+  iframeBlocked:
+    'Na zobrazenie obsahu tretích stráns je potrebné povoliť marketingové cookies, ',
+  manageCookies: 'Podrobné nastavenia',
+  save: 'Uložiť predvoľby',
+  settingsUnsaved: 'Vykonané zmeny neboli uložené',
 } as LocaleStrings
