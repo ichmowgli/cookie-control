@@ -72,14 +72,14 @@
             />
             <template v-for="cookieType in CookieType" :key="cookieType">
               <template v-if="moduleOptions.cookies[cookieType]?.length">
-                <h2
+                <!-- <h2
                   v-text="
                     localeStrings &&
                     (cookieType === CookieType.NECESSARY
                       ? localeStrings.cookiesNecessary
                       : localeStrings.cookiesOptional)
                   "
-                />
+                /> -->
                 <ul>
                   <li
                     v-for="cookie in moduleOptions.cookies[cookieType]"
