@@ -166,8 +166,9 @@
                 </ul>
               </template>
             </template>
-            <div class="cookieControl__ModalButtons">
+            <div class="cookie-modal-buttons">
               <button
+                class="cookie-modal-save-button"
                 type="button"
                 @click="
                   () => {
@@ -178,6 +179,7 @@
                 v-text="localeStrings?.save"
               />
               <button
+                class="cookie-modal-accept-all-button"
                 type="button"
                 @click="
                   () => {
@@ -189,6 +191,7 @@
               />
               <button
                 v-if="!moduleOptions.isModalForced"
+                class="cookie-modal-decline-all-button"
                 type="button"
                 @click="
                   () => {
@@ -536,5 +539,119 @@ defineExpose({
   padding: 1rem 0;
   text-align: center;
   color: white;
+}
+
+.cookie-modal-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  @media (min-width: 640px) {
+    flex-direction: row;
+  }
+}
+
+.cookie-modal-save-button {
+  width: 100%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 41px;
+  padding: 6px 20px;
+  font-weight: 500;
+  font-size: 0.9375rem;
+  color: #fff;
+  background-color: #05989b;
+  border: 0 solid transparent;
+  border-radius: 6px;
+  cursor: pointer;
+  transition:
+    background-color 0.15s ease-in-out,
+    color 0.15s ease-in-out;
+  text-decoration: none;
+  user-select: none;
+
+  &:focus {
+    outline: 0;
+  }
+
+  &:hover {
+    background-color: #1bb5bc;
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    pointer-events: none;
+    background-color: #c5eced;
+  }
+}
+
+.cookie-modal-accept-all-button {
+  width: 100%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 41px;
+  padding: 6px 20px;
+  font-weight: 500;
+  font-size: 0.9375rem;
+  color: #017275;
+  background-color: #ceeaeb;
+  border: 0 solid transparent;
+  border-radius: 6px;
+  cursor: pointer;
+  transition:
+    background-color 0.15s ease-in-out,
+    color 0.15s ease-in-out;
+  text-decoration: none;
+  user-select: none;
+
+  &:focus {
+    outline: 0;
+  }
+
+  &:hover {
+    background-color: #b7e0e1;
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    pointer-events: none;
+    background-color: #c5eced;
+  }
+}
+
+.cookie-modal-decline-all-button {
+  width: 100%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 41px;
+  padding: 6px 20px;
+  font-weight: 500;
+  font-size: 0.9375rem;
+  color: #f22828;
+  background-color: #fee2e2;
+  border: 0 solid transparent;
+  border-radius: 6px;
+  cursor: pointer;
+  transition:
+    background-color 0.15s ease-in-out,
+    color 0.15s ease-in-out;
+  text-decoration: none;
+  user-select: none;
+
+  &:focus {
+    outline: 0;
+  }
+
+  &:hover {
+    background-color: #fecaca;
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    pointer-events: none;
+    background-color: #c5eced;
+  }
 }
 </style>

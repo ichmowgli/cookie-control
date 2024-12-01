@@ -202,12 +202,12 @@
   top: 20px;
   right: 20px;
 }
-.cookieControl__ModalButtons {
+/* .cookieControl__ModalButtons {
   display: flex;
   margin-top: 40px;
   align-items: stretch;
   gap: 20px;
-}
+} */
 .cookieControl__ModalUnsaved {
   position: absolute;
   left: 50%;
