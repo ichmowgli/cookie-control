@@ -1,6 +1,6 @@
 <template>
-  <aside class="">
-    <transition :name="`cookieControl__Bar--${moduleOptions.barPosition}`">
+  <aside>
+    <transition name="cookie-control-container--transition">
       <div
         v-if="!isConsentGiven && !moduleOptions.isModalForced"
         class="cookie-control-container"
@@ -63,12 +63,10 @@
         <div class="cookieControl__ModalContent">
           <div class="cookieControl__ModalContentInner">
             <slot name="modal" />
-            <button
+            <div
               v-if="!moduleOptions.isModalForced"
-              class="cookieControl__ModalClose"
-              type="button"
+              class="ModalLayout__close"
               @click="isModalActive = false"
-              v-text="localeStrings?.close"
             />
             <template v-for="cookieType in CookieType" :key="cookieType">
               <template v-if="moduleOptions.cookies[cookieType]?.length">
@@ -654,5 +652,38 @@ defineExpose({
     pointer-events: none;
     background-color: #c5eced;
   }
+}
+
+.ModalLayout__close {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  right: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 4rem;
+  height: 4.3rem;
+
+  font-size: 1.85rem;
+  opacity: 0.4;
+
+  &::before {
+    content: '\00d7';
+
+    transform: translateY(-0.15rem);
+  }
+
+  &:hover {
+    opacity: 1;
+    cursor: pointer;
+  }
+}
+
+/* TODO: cookieControl__Modal  rewrite; rewrite all styles  */
+
+.cookieControl__ModalContent {
+  border-radius: 0.375rem;
 }
 </style>
