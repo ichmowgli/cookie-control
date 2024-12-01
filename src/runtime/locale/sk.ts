@@ -10,12 +10,12 @@ export default {
   cookiesFunctional: '',
   cookiesNecessary: '',
   cookiesOptional: '',
-  decline: 'Odmietnuť',
-  declineAll: 'Odmietnuť všetky',
+  decline: '',
+  declineAll: 'Odmietnuť',
   here: 'kliknite tu',
   iframeBlocked:
     'Na zobrazenie obsahu tretích stráns je potrebné povoliť marketingové cookies, ',
   manageCookies: 'Podrobné nastavenia',
-  save: 'Uložiť',
+  save: 'Uložiť predvoľby',
   settingsUnsaved: 'Vykonané zmeny neboli uložené',
 } as LocaleStrings
