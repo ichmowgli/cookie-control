@@ -1,12 +1,12 @@
 <template>
-  <aside class="cookieControl">
+  <aside class="">
     <transition :name="`cookieControl__Bar--${moduleOptions.barPosition}`">
       <div
         v-if="!isConsentGiven && !moduleOptions.isModalForced"
-        :class="`cookieControl__Bar cookieControl__Bar--${moduleOptions.barPosition}`"
+        class="cookie-control-container"
       >
-        <div class="cookieControl__BarContainer">
-          <div class="text-bar">
+        <div class="cookie-control-content">
+          <div class="cookie-control-title">
             <slot name="bar">
               <h2 v-text="localeStrings?.bannerTitle" />
               <p v-text="localeStrings?.bannerDescription" />
@@ -14,28 +14,13 @@
           </div>
           <div class="button-bar">
             <button
-              style="
-                text-transform: uppercase;
-                margin-left: auto;
-                margin-right: auto;
-                max-width: 13rem;
-                width: 100%;
-                @media (min-width: 640px) {
-                  max-width: 12rem;
-                }
-                --tw-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1),
-                  0 2px 4px -2px rgb(0 0 0 / 0.1) !important;
-                --tw-shadow-colored: 0 4px 6px -1px var(--tw-shadow-color),
-                  0 2px 4px -2px var(--tw-shadow-color) !important;
-                box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
-                  var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
-              "
-              class="accept-button"
+              class="mx-auto max-w-52 shadow-md sm:max-w-48 bg-green-500 text-white hover:bg-green-700"
               type="button"
               @click="accept()"
               v-text="localeStrings?.accept"
             />
             <button
+              class="w-full py-4 text-center text-white"
               type="button"
               @click="isModalActive = true"
               v-text="localeStrings?.manageCookies"
@@ -426,3 +411,71 @@ defineExpose({
   decline,
 })
 </script>
+
+<style scoped>
+.cookie-control-container {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding-top: 3.5rem;
+  padding-bottom: 3.5rem;
+  align-items: middle;
+  width: 100%;
+  background-color: #017275;
+}
+
+.cookie-control-content {
+  max-width: 1168px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  display: grid;
+  gap: 2rem;
+
+  @media (min-width: 640px) {
+    max-width: 640px;
+  }
+  @media (min-width: 768px) {
+    max-width: 768px;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  @media (min-width: 1024px) {
+    max-width: 1024px;
+  }
+  @media (min-width: 1280px) {
+    max-width: 1280px;
+  }
+  @media (min-width: 1536px) {
+    max-width: 1536px;
+  }
+  @media (min-width: 1920px) {
+    max-width: 1920px;
+  }
+}
+
+.cookie-control-title {
+  @media (min-width: 768px) {
+    grid-column: span 2 / span 2;
+  }
+}
+
+.accept-button {
+  margin: 0 auto;
+  max-width: 13rem; /* Equivalent to max-w-52 */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Equivalent to shadow-md */
+  background-color: #48bb78; /* Equivalent to bg-green-500 */
+  color: white;
+  transition: background-color 0.3s;
+}
+
+.accept-button:hover {
+  background-color: #2f855a; /* Equivalent to hover:bg-green-700 */
+}
+
+.manage-cookies-button {
+  width: 100%;
+  padding: 1rem 0; /* Equivalent to py-4 */
+  text-align: center;
+  color: white;
+}
+</style>

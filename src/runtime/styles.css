@@ -108,19 +108,8 @@
   margin-left: 10px;
 } */
 .cookieControl__BarContainer {
-  display: grid;
-  row-gap: 2rem;
-  width: 100%;
-  max-width: 1168px;
-  padding-left: 1rem;
-  padding-right: 1rem;
-  margin-left: auto;
-  margin-right: auto;
 
-  @media (min-width: 768px) {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-
+  /*
   .text-bar {
     @media (min-width: 768px) {
       grid-column: span 2 / span 2;
@@ -138,7 +127,7 @@
     @media (min-width: 768px) {
       flex-direction: column;
     }
-  }
+  } */
   /*
 
   /* align-items: flex-end;
