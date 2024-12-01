@@ -8,7 +8,7 @@
         <div class="cookie-control-content">
           <div class="cookie-control-title">
             <slot name="bar">
-              <h2
+              <p
                 class="cookie-control-text"
                 v-text="localeStrings?.bannerTitle"
               />
@@ -20,14 +20,13 @@
           </div>
           <div class="button-bar">
             <button
-              class="mx-auto max-w-52 shadow-md sm:max-w-48 bg-green-500 text-white hover:bg-green-700"
+              class="accept-button"
               type="button"
               @click="accept()"
               v-text="localeStrings?.accept"
             />
-            <button
-              class="w-full py-4 text-center text-white"
-              type="button"
+            <a
+              class="manage-cookies-button"
               @click="isModalActive = true"
               v-text="localeStrings?.manageCookies"
             />
@@ -429,6 +428,10 @@ defineExpose({
   align-items: middle;
   width: 100%;
   background-color: #017275;
+  @media (min-width: 640px) {
+    padding-top: 4.5rem;
+    padding-bottom: 4.5rem;
+  }
 }
 
 .cookie-control-content {
@@ -460,16 +463,17 @@ defineExpose({
 }
 
 .cookie-control-title {
+  margin: 0;
   @media (min-width: 768px) {
     grid-column: span 2 / span 2;
   }
 }
 
 .cookie-control-text {
+  margin: 0;
   color: white;
   font-size: 1.125rem;
   line-height: 1.75rem;
-  margin-bottom: 1rem;
   @media (min-width: 640px) {
     font-size: 1.5rem;
     line-height: 2rem;
@@ -481,13 +485,46 @@ defineExpose({
   margin-bottom: 0px;
 }
 
+.button-bar {
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+  align-self: center;
+  @media (min-width: 640px) {
+    flex-direction: row;
+  }
+  @media (min-width: 768px) {
+    flex-direction: column;
+  }
+}
+
 .accept-button {
-  margin: 0 auto;
-  max-width: 13rem; /* Equivalent to max-w-52 */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Equivalent to shadow-md */
-  background-color: #48bb78; /* Equivalent to bg-green-500 */
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 13rem;
+  background-color: #0da947;
+  padding: 0.375rem 2.25rem;
   color: white;
-  transition: background-color 0.3s;
+  min-height: 45px;
+  border-radius: 0.375rem;
+  cursor: pointer;
+  font-size: 0.9375rem;
+  border-style: none;
+  text-transform: uppercase;
+  box-shadow:
+    0 4px 6px -1px rgb(0 0 0 / 0.1),
+    0 2px 4px -2px rgb(0 0 0 / 0.1);
+  @media (min-width: 640px) {
+    max-width: 12rem;
+  }
+}
+
+.manage-cookies-button {
+  width: 100%;
+  padding: 1rem 0;
+  text-align: center;
+  color: white;
 }
 
 .accept-button:hover {
@@ -496,7 +533,7 @@ defineExpose({
 
 .manage-cookies-button {
   width: 100%;
-  padding: 1rem 0; /* Equivalent to py-4 */
+  padding: 1rem 0;
   text-align: center;
   color: white;
 }
