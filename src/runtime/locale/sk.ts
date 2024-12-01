@@ -1,8 +1,8 @@
 import type { LocaleStrings } from '#cookie-control/types'
 
 export default {
-  accept: 'Prijať',
-  acceptAll: 'Prijať všetky',
+  accept: '',
+  acceptAll: 'Prijať',
   bannerDescription:
     'Používame cookies, aby sme Vám umožnili pohodlné prehliadanie webu a vďaka analýze návštevnosti, mohli neustále zlepšovať funkcie, výkon a použiteľnosť.',
   bannerTitle: 'Na vašom súkromí nám záleží',
@@ -16,6 +16,6 @@ export default {
   iframeBlocked:
     'Na zobrazenie obsahu tretích stráns je potrebné povoliť marketingové cookies, ',
   manageCookies: 'Podrobné nastavenia',
-  save: 'Uložiť predvoľby',
+  save: 'Uložiť',
   settingsUnsaved: 'Vykonané zmeny neboli uložené',
 } as LocaleStrings

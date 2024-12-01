@@ -168,17 +168,6 @@
             </template>
             <div class="cookie-modal-buttons">
               <button
-                class="cookie-modal-save-button"
-                type="button"
-                @click="
-                  () => {
-                    acceptPartial()
-                    isModalActive = false
-                  }
-                "
-                v-text="localeStrings?.save"
-              />
-              <button
                 class="cookie-modal-accept-all-button"
                 type="button"
                 @click="
@@ -189,6 +178,18 @@
                 "
                 v-text="localeStrings?.acceptAll"
               />
+              <button
+                class="cookie-modal-save-button"
+                type="button"
+                @click="
+                  () => {
+                    acceptPartial()
+                    isModalActive = false
+                  }
+                "
+                v-text="localeStrings?.save"
+              />
+
               <button
                 v-if="!moduleOptions.isModalForced"
                 class="cookie-modal-decline-all-button"
@@ -550,7 +551,7 @@ defineExpose({
   }
 }
 
-.cookie-modal-save-button {
+.cookie-modal-accept-all-button {
   width: 100%;
   display: inline-flex;
   align-items: center;
@@ -585,7 +586,7 @@ defineExpose({
   }
 }
 
-.cookie-modal-accept-all-button {
+.cookie-modal-save-button {
   width: 100%;
   display: inline-flex;
   align-items: center;
