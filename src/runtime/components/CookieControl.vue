@@ -8,8 +8,14 @@
         <div class="cookie-control-content">
           <div class="cookie-control-title">
             <slot name="bar">
-              <h2 v-text="localeStrings?.bannerTitle" />
-              <p v-text="localeStrings?.bannerDescription" />
+              <h2
+                class="cookie-control-text"
+                v-text="localeStrings?.bannerTitle"
+              />
+              <p
+                class="cookie-control-description"
+                v-text="localeStrings?.bannerDescription"
+              />
             </slot>
           </div>
           <div class="button-bar">
@@ -457,6 +463,22 @@ defineExpose({
   @media (min-width: 768px) {
     grid-column: span 2 / span 2;
   }
+}
+
+.cookie-control-text {
+  color: white;
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  margin-bottom: 1rem;
+  @media (min-width: 640px) {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+}
+
+.cookie-control-description {
+  color: white;
+  margin-bottom: 0px;
 }
 
 .accept-button {
