@@ -23,7 +23,7 @@
               class="accept-button"
               type="button"
               @click="accept()"
-              v-text="localeStrings?.accept"
+              v-text="localeStrings?.acceptAll"
             />
             <a
               class="manage-cookies-button"
