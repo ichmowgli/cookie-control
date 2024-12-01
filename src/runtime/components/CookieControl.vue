@@ -5,27 +5,36 @@
         v-if="!isConsentGiven && !moduleOptions.isModalForced"
         :class="`cookieControl__Bar cookieControl__Bar--${moduleOptions.barPosition}`"
       >
-        <div class="cookieControl__BarContainer container">
-          <div>
+        <div class="cookieControl__BarContainer">
+          <div class="text-bar">
             <slot name="bar">
               <h2 v-text="localeStrings?.bannerTitle" />
               <p v-text="localeStrings?.bannerDescription" />
             </slot>
           </div>
-          <div class="cookieControl__BarButtons container">
+          <div class="button-bar">
             <button
-              style="text-transform: uppercase; font-size: 15px"
+              style="
+                text-transform: uppercase;
+                margin-left: auto;
+                margin-right: auto;
+                max-width: 13rem;
+                width: 100%;
+                @media (min-width: 640px) {
+                  max-width: 12rem;
+                }
+                --tw-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1),
+                  0 2px 4px -2px rgb(0 0 0 / 0.1) !important;
+                --tw-shadow-colored: 0 4px 6px -1px var(--tw-shadow-color),
+                  0 2px 4px -2px var(--tw-shadow-color) !important;
+                box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
+                  var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+              "
               class="accept-button"
               type="button"
               @click="accept()"
               v-text="localeStrings?.accept"
             />
-            <!-- <button
-              v-if="moduleOptions.isAcceptNecessaryButtonEnabled"
-              type="button"
-              @click="decline()"
-              v-text="localeStrings?.decline"
-            /> -->
             <button
               type="button"
               @click="isModalActive = true"
