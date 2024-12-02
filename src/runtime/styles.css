@@ -317,7 +317,7 @@
 .cookieControl__BlockedIframe a {
   font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 640px) {
   .cookieControl__Bar {
     flex-direction: column;
     left: 0;
