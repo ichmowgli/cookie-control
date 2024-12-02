@@ -537,7 +537,7 @@ defineExpose({
 }
 
 .cookie-modal-buttons {
-  margin-top: 1rem;
+  margin-top: 1.5rem;
   display: flex;
   flex-direction: column;
   gap: 1rem;
