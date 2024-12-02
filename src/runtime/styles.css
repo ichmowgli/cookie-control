@@ -62,7 +62,7 @@
     background-color 200ms,
     color 200ms;
 }
-.cookieControl__Bar {
+/* .cookieControl__Bar {
   position: fixed;
   background-color: var(--cookie-control-barBackground);
   font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
@@ -99,7 +99,7 @@
   padding: 20px;
   align-items: flex-end;
   justify-content: space-between;
-}
+} */
 .cookieControl__Bar--top-full,
 .cookieControl__Bar--bottom-full {
   left: 0;
@@ -185,17 +185,17 @@
   color: var(--cookie-control-modalButtonColor);
   background-color: var(--cookie-control-modalButtonBackground);
 }
-.cookieControl__Modal button:hover {
+/* .cookieControl__Modal button:hover {
   color: var(--cookie-control-modalButtonHoverColor);
   background-color: var(--cookie-control-modalButtonHoverBackground);
-}
-.cookieControl__Modal button:focus {
+} */
+/* .cookieControl__Modal button:focus {
   box-shadow: 0 0 0 3px var(--cookie-control-focusRingColor);
-}
+} */
 .cookieControl__ModalContent {
   position: relative;
   width: 100%;
-  max-width: 550px;
+  max-width: 600px;
   max-height: 80vh;
   text-align: left;
   overflow-y: scroll;

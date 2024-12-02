@@ -564,9 +564,6 @@ defineExpose({
   border: 0 solid transparent;
   border-radius: 6px;
   cursor: pointer;
-  transition:
-    background-color 0.15s ease-in-out,
-    color 0.15s ease-in-out;
   text-decoration: none;
   user-select: none;
 
@@ -599,9 +596,7 @@ defineExpose({
   border: 0 solid transparent;
   border-radius: 6px;
   cursor: pointer;
-  transition:
-    background-color 0.15s ease-in-out,
-    color 0.15s ease-in-out;
+
   text-decoration: none;
   user-select: none;
 
@@ -634,9 +629,6 @@ defineExpose({
   border: 0 solid transparent;
   border-radius: 6px;
   cursor: pointer;
-  transition:
-    background-color 0.15s ease-in-out,
-    color 0.15s ease-in-out;
   text-decoration: none;
   user-select: none;
 
@@ -695,6 +687,10 @@ defineExpose({
   }
 }
 
+button {
+  border: none;
+  outline: none;
+}
 /* TODO: cookieControl__Modal  rewrite; rewrite all styles  */
 
 .cookieControl__ModalContent {
