@@ -62,12 +62,15 @@
         />
         <div class="cookieControl__ModalContent">
           <div class="cookieControl__ModalContentInner">
+            <h2 class="cookie-modal-heading">Nastavenie cookies</h2>
             <slot name="modal" />
+
             <div
               v-if="!moduleOptions.isModalForced"
               class="ModalLayout__close"
               @click="isModalActive = false"
             />
+
             <template v-for="cookieType in CookieType" :key="cookieType">
               <template v-if="moduleOptions.cookies[cookieType]?.length">
                 <!-- <h2
@@ -520,6 +523,11 @@ defineExpose({
   @media (min-width: 640px) {
     max-width: 12rem;
   }
+
+  &:hover {
+    background-color: #2f855a;
+    transition: background-color 0.15s ease-in-out;
+  }
 }
 
 .manage-cookies-button {
@@ -527,17 +535,10 @@ defineExpose({
   padding: 1rem 0;
   text-align: center;
   color: white;
-}
 
-.accept-button:hover {
-  background-color: #2f855a; /* Equivalent to hover:bg-green-700 */
-}
-
-.manage-cookies-button {
-  width: 100%;
-  padding: 1rem 0;
-  text-align: center;
-  color: white;
+  &:hover {
+    cursor: pointer;
+  }
 }
 
 .cookie-modal-buttons {
@@ -655,29 +656,42 @@ defineExpose({
 }
 
 .ModalLayout__close {
+  background-color: #ececf1;
   position: absolute;
   z-index: 1;
-  top: 0;
-  right: 0;
-
+  top: 1.25rem;
+  right: 1.25rem;
+  border-radius: 9999px;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 4rem;
-  height: 4.3rem;
+  width: 2.25rem;
+  height: 2.25rem;
+  opacity: 1;
 
   font-size: 1.85rem;
-  opacity: 0.4;
 
   &::before {
+    color: black;
     content: '\00d7';
-
     transform: translateY(-0.15rem);
   }
 
   &:hover {
-    opacity: 1;
+    transition: opacity 0.15s ease-in-out;
+    opacity: 0.4;
     cursor: pointer;
+  }
+}
+
+.cookie-modal-heading {
+  flex: 0 0 auto;
+  padding: 1.25rem 4rem 0 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+
+  @media (min-width: 640px) {
+    font-size: 32px;
   }
 }
 
