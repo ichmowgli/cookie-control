@@ -659,7 +659,6 @@ defineExpose({
   &::before {
     color: black;
     content: '\00d7';
-    transform: translateY(-0.15rem);
   }
 
   &:hover {
