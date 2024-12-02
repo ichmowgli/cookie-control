@@ -553,7 +553,6 @@ defineExpose({
   justify-content: center;
   min-height: 41px;
   padding: 6px 20px;
-  font-weight: 500;
   font-size: 0.9375rem;
   color: #fff;
   background-color: #05989b;
@@ -585,7 +584,6 @@ defineExpose({
   justify-content: center;
   min-height: 41px;
   padding: 6px 20px;
-  font-weight: 500;
   font-size: 0.9375rem;
   color: #017275;
   background-color: #ceeaeb;
@@ -618,7 +616,6 @@ defineExpose({
   justify-content: center;
   min-height: 41px;
   padding: 6px 20px;
-  font-weight: 500;
   font-size: 0.9375rem;
   color: #f22828;
   background-color: #fee2e2;
