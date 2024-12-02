@@ -656,8 +656,8 @@ defineExpose({
   width: 2.25rem;
   height: 2.25rem;
   opacity: 1;
-
-  font-size: 1.85rem;
+  /* transform: translateY(-0.15rem); */
+  font-size: 1.55rem;
 
   &::before {
     color: black;
@@ -666,7 +666,6 @@ defineExpose({
   }
 
   &:hover {
-    transition: opacity 0.15s ease-in-out;
     opacity: 0.4;
     cursor: pointer;
   }
