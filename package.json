@@ -1,15 +1,11 @@
 {
-  "author": "Jonas Thelemann",
-  "contributors": [
-    "Dario Ferderber <dario.ferderber@broj42.com>"
-  ],
   "dependencies": {
     "@nuxt/kit": "^3.8.0",
     "css-vars-ponyfill": "^2.4.8",
     "defu": "^6.1.4",
     "string-replace-loader": "^3.1.0"
   },
-  "description": "Nuxt Cookie Control Module",
+  "description": "Nuxt Cookie Control Module for GDPR compliance",
   "devDependencies": {
     "@commitlint/cli": "19.6.0",
     "@commitlint/config-conventional": "19.6.0",
@@ -68,7 +64,7 @@
   "maintainers": [
     "Jonas Thelemann"
   ],
-  "name": "@dargmuesli/nuxt-cookie-control",
+  "name": "@ichmowgli/nuxt-cookie-control",
   "packageManager": "pnpm@9.14.4",
   "publishConfig": {
     "access": "public"
@@ -78,7 +74,7 @@
       "typescript": "5.6.3"
     }
   },
-  "repository": "https://github.com/dargmuesli/nuxt-cookie-control",
+  "repository": "https://github.com/ichmowgli/nuxt-cookie-control",
   "resolutions": {
     "@nuxt/kit": "3.14.1592"
   },
@@ -90,9 +86,9 @@
     "lint:js": "eslint --cache",
     "lint:ts": "vue-tsc --noEmit",
     "prepack": "pnpm build",
-    "prepare": "husky && nuxt-module-build prepare"
+    "prepare": "nuxt-module-build prepare"
   },
   "type": "module",
   "types": "./dist/types.d.ts",
-  "version": "8.4.17"
+  "version": "1.0.0"
 }
