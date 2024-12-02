@@ -282,12 +282,10 @@
   align-items: flex-start;
 }
 .cookieControl__ModalCookieName {
-  font-weight: bold;
-  text-transform: uppercase;
+  font-weight: 600;
 }
 .cookieControl__ModalCookieName span {
   font-weight: normal;
-  text-transform: none;
 }
 .cookieControl__ModalClose {
   align-self: flex-end;

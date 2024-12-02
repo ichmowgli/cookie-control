@@ -73,14 +73,6 @@
 
             <template v-for="cookieType in CookieType" :key="cookieType">
               <template v-if="moduleOptions.cookies[cookieType]?.length">
-                <!-- <h2
-                  v-text="
-                    localeStrings &&
-                    (cookieType === CookieType.NECESSARY
-                      ? localeStrings.cookiesNecessary
-                      : localeStrings.cookiesOptional)
-                  "
-                /> -->
                 <ul>
                   <li
                     v-for="cookie in moduleOptions.cookies[cookieType]"
@@ -121,8 +113,11 @@
                           @keydown="toggleLabel($event)"
                         >
                           {{ getName(cookie.name) }}
-                          <span v-if="cookie.description">
-                            {{ getDescription(cookie.description) }}
+                          <span
+                            v-if="cookie.description"
+                            class="cookieControl__ModalCookieDescription"
+                          >
+                            <br />{{ getDescription(cookie.description) }}
                           </span>
                           <span
                             v-if="

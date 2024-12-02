@@ -74,6 +74,7 @@ export default defineNuxtConfig({
         },
       ],
     },
+    isDashInDescriptionEnabled: false,
     isCookieIdVisible: true,
     isIframeBlocked: true,
     locales: ['en', 'sk'],
