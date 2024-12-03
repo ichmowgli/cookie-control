@@ -98,7 +98,11 @@ importers:
         specifier: 5.96.1
         version: 5.96.1
 
-  playground: {}
+  playground:
+    dependencies:
+      '@ichmowgli/nuxt-cookie-control':
+        specifier: ^1.0.5
+        version: 1.0.5(magicast@0.3.5)(rollup@4.27.4)(webpack@5.96.1)
 
 packages:
 
@@ -821,6 +825,10 @@ packages:
   '@humanwhocodes/retry@0.4.1':
     resolution: {integrity: sha512-c7hNEllBlenFTHBky65mhq8WD2kbN9Q6gk0bTk8lSBvc554jpXSkST1iePudpt7+A/AQvuHs9EMqjHDXMY1lrA==}
     engines: {node: '>=18.18'}
+
+  '@ichmowgli/nuxt-cookie-control@1.0.5':
+    resolution: {integrity: sha512-7thbAZDBvGFbgsOXSebmLilpWCrRNbgcEJTrmSZSI8Fq5VrwVqkL7cLuiCv5sGkl+moRT4Tyw0X1kXP7a4Y1yA==}
+    engines: {node: '>=16'}
 
   '@ioredis/commands@1.2.0':
     resolution: {integrity: sha512-Sx1pU8EM64o2BrqNpEO1CNLtKQwyhuXuqyfH7oGKCk+1a33d2r5saW8zNwm3j6BTExtjrv2BxTgzzkMwts6vGg==}
@@ -5911,6 +5919,18 @@ snapshots:
   '@humanwhocodes/retry@0.3.1': {}
 
   '@humanwhocodes/retry@0.4.1': {}
+
+  '@ichmowgli/nuxt-cookie-control@1.0.5(magicast@0.3.5)(rollup@4.27.4)(webpack@5.96.1)':
+    dependencies:
+      '@nuxt/kit': 3.14.1592(magicast@0.3.5)(rollup@4.27.4)
+      css-vars-ponyfill: 2.4.9
+      defu: 6.1.4
+      string-replace-loader: 3.1.0(webpack@5.96.1)
+    transitivePeerDependencies:
+      - magicast
+      - rollup
+      - supports-color
+      - webpack
 
   '@ioredis/commands@1.2.0': {}
 

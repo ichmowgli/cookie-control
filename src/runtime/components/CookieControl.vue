@@ -452,25 +452,17 @@ defineExpose({
   padding: 0 1rem;
 
   @media (min-width: 640px) {
-    .cookie-control-content {
-      max-width: 640px;
-    }
+    max-width: 640px;
   }
   @media (min-width: 768px) {
-    .cookie-control-content {
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      max-width: 768px;
-    }
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    max-width: 768px;
   }
   @media (min-width: 1024px) {
-    .cookie-control-content {
-      max-width: 1024px;
-    }
+    max-width: 1024px;
   }
   @media (min-width: 1280px) {
-    .cookie-control-content {
-      max-width: 1168px;
-    }
+    max-width: 1168px;
   }
 }
 
