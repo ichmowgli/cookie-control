@@ -8,7 +8,7 @@ export default defineNuxtConfig({
   future: {
     compatibilityVersion: 4,
   },
-  modules: ['@dargmuesli/nuxt-cookie-control'],
+  modules: ['@ichmowgli/nuxt-cookie-control'],
   typescript: {
     includeWorkspace: true,
   },

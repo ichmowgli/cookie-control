@@ -8,5 +8,8 @@
     "lint:fix": "pnpm run lint:ts --fix",
     "lint:ts": "vue-tsc --noEmit",
     "prepare": "cd .. && pnpm build --stub && cd playground && nuxi prepare"
+  },
+  "dependencies": {
+    "@ichmowgli/nuxt-cookie-control": "^1.0.5"
   }
 }
