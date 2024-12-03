@@ -474,6 +474,7 @@ defineExpose({
   color: white;
   font-size: 1.125rem;
   line-height: 1.75rem;
+  font-weight: 500;
   @media (min-width: 640px) {
     font-size: 1.5rem;
     line-height: 2rem;

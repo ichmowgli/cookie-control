@@ -125,32 +125,7 @@
 .cookieControl__Bar--bottom-right .cookieControl__BarContainer {
   flex-direction: column;
 }
-.cookieControl__Bar--center .cookieControl__BarButtons,
-.cookieControl__Bar--top-left .cookieControl__BarButtons,
-.cookieControl__Bar--top-right .cookieControl__BarButtons,
-.cookieControl__Bar--bottom-left .cookieControl__BarButtons,
-.cookieControl__Bar--bottom-right .cookieControl__BarButtons {
-  margin-top: 20px;
-}
-.cookieControl__Bar--top-left,
-.cookieControl__Bar--top-right {
-  top: 20px;
-}
-.cookieControl__Bar--bottom-left,
-.cookieControl__Bar--bottom-right {
-  bottom: 20px;
-}
-.cookieControl__Bar--top-left,
-.cookieControl__Bar--bottom-left {
-  left: 20px;
-}
-.cookieControl__Bar--top-right,
-.cookieControl__Bar--bottom-right {
-  right: 20px;
-}
-.cookieControl__BarButtons {
-  display: flex;
-}
+
 .cookieControl__Modal {
   position: fixed;
   top: 0;
